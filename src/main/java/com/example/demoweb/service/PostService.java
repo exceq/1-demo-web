@@ -3,10 +3,7 @@ package com.example.demoweb.service;
 import com.example.demoweb.model.Post;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 
 @Service
 public class PostService {
@@ -19,12 +16,12 @@ public class PostService {
 
     static Collection<Post> createFirstPosts() {
         return Arrays.asList(
-                new Post("Один", new Date()),
-                new Post("Два Два", new Date()),
-                new Post("Три Три Три", new Date()));
+                new Post(0L,"Один", new Date()),
+                new Post(1L,"Два Два", new Date()),
+                new Post(2L,"Три Три Три", new Date()));
     }
 
     public static void create(String text) {
-        posts.add(new Post(text, new Date()));
+        posts.add(new Post((long)posts.size(), text, new Date()));
     }
 }
